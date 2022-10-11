@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 375px;
+    border: 1px solid red;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: pink; */
+    border-bottom: 1px solid #C6C6C6;
+    /* padding: 15px 15px; */
+    height: 67px;
+}
+
+#avatar {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    padding: 15px;
+}
+
+#logo {
+    padding: 7px 10px;
+}
