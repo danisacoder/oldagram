@@ -1,32 +1,37 @@
 <html>
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
             <header>
-                <img id="logo" src="images/logo.png">
-                <img id="avatar" src="images/user-avatar.png">
+                <img class="logo" src="images/logo.png">
+                <img class="avatar" src="images/user-avatar.png">
             </header>
             <article>
                 <div class="post-header">
-                    <img class="user-avatar" src="images/avatar-vangogh.jpg">
-                    <div class="user-details">
-                        <div class="poster-name">Per</div>
-                        <div class="poster-location">Some Place
+                    <img class="poster-avatar" src="images/avatar-vangogh.jpg">
+                    <div class="poster-details">
+                        <div class="poster-name emphasize">Vincent Van Gogh</div>
+                        <div class="poster-location">Zudert, Netherlands</div>
                     </div>
                 </div>
-                <div class="post-body">
-                    <img src="images/post-vangogh.jpg">
-                </div>
-                <div class="post-actions">
-                    <img src="images/icon-heart.png" alt="">
-                    <img src="images/icon-comment.png" alt="">
-                    <img src="images/icon-dm.png" alt="">
-                </div>
+                <img class="post-img" src="images/post-vangogh.jpg">
+
+
                 <div class="post-footer">
-                    <p class="poster-handle">vincey1853</p>
-                    <p class="poster-text">just took a few mushrooms lol</p>
+                    <div class="post-actions">
+                        <img class="action-icon" src="images/icon-heart.png" alt="">
+                        <img class="action-icon" src="images/icon-comment.png" alt="">
+                        <img class="action-icon" src="images/icon-dm.png" alt="">
+                    </div>
+                    <div class="post-likes emphasize">21,492 likes</div>
+                    <div class="post-text">
+                        <div class="post-text"><span class="post-handle emphasize">vincey1853</span>just took a few mushrooms lol</div>
+                    </div>
                 </div>
             </article>
         </div>
@@ -34,3 +39,4 @@
         <script src="index.js"></script>
     </body>
 </html>
+
