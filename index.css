@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 375px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-size: 12px;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #C6C6C6;
@@ -96,3 +96,4 @@ article {
     margin: 0px 4px 0 0;
     display: inline-block;
 }
+

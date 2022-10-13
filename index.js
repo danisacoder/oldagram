@@ -28,103 +28,141 @@ const posts = [
     }
 ]
 
-function generatePost() {
+function generatePosts() {
 
-    // create new article to contain new content
-    let article = document.createElement('article')
-    document.body.appendChild(article) 
+    for (let i=0; i<posts.length; i++) {
 
-    // post-header container div
-    let postHeader = document.createElement('div')
-    postHeader.classList.add('post-header')
-    article.appendChild(postHeader) 
+        // create new article to contain new content
+        let article = document.createElement('article')
+        document.body.appendChild(article) 
 
-    // avatar image to represent the poster
-    let posterAvatar = document.createElement('img')
-    posterAvatar.classList.add('poster-avatar')
-    posterAvatar.src = "images/avatar-vangogh.jpg"
-    postHeader.appendChild(posterAvatar)
+        // post-header container div
+        let postHeader = document.createElement('div')
+        postHeader.classList.add('post-header')
+        article.appendChild(postHeader) 
 
-    // div to contain poster details
-    let posterDetails = document.createElement('div')
-    posterDetails.classList.add('poster-details')
-    postHeader.appendChild(posterDetails)
+        // avatar image to represent the poster
+        let posterAvatar = document.createElement('img')
+        posterAvatar.classList.add('poster-avatar')
+        posterAvatar.src = `${posts[i].avatar}`
+        postHeader.appendChild(posterAvatar)
 
-    // name of the person posting the post
-    let posterName = document.createElement('div')
-    posterName.classList.add('poster-name')
-    posterName.classList.add('emphasize')
-    posterName.textContent = 'Vincent Van Gogh'
-    posterDetails.appendChild(posterName)
+        // div to contain poster details
+        let posterDetails = document.createElement('div')
+        posterDetails.classList.add('poster-details')
+        postHeader.appendChild(posterDetails)
 
-    // location of the poster posting the post
-    let posterLocation = document.createElement('div')
-    posterLocation.classList.add('poster-location')
-    posterLocation.textContent = 'Zudert, Netherlands'
-    posterDetails.appendChild(posterLocation)
+        // name of the person posting the post
+        let posterName = document.createElement('div')
+        posterName.classList.add('poster-name')
+        posterName.classList.add('emphasize')
+        posterName.textContent = `${posts[i].name}`
+        posterDetails.appendChild(posterName)
 
-    // main post image
-    let postImg = document.createElement('img')
-    postImg.classList.add('post-img')
-    postImg.src = 'images/post-vangogh.jpg'
-    article.appendChild(postImg)
+        // location of the poster posting the post
+        let posterLocation = document.createElement('div')
+        posterLocation.classList.add('poster-location')
+        posterLocation.textContent = `${posts[i].location}`
+        posterDetails.appendChild(posterLocation)
 
-    // footer container for action buttons and comments and all that
-    let postFooter = document.createElement('div')
-    postFooter.classList.add('post-footer')
-    article.appendChild(postFooter)
+        // main post image
+        let postImg = document.createElement('img')
+        postImg.classList.add('post-img')
+        postImg.src = `${posts[i].post}`
+        article.appendChild(postImg)
 
-    // action buttons div
-    let postActions = document.createElement('div')
-    postActions.classList.add('post-actions')
-    postFooter.appendChild(postActions)
+        // footer container for action buttons and comments and all that
+        let postFooter = document.createElement('div')
+        postFooter.classList.add('post-footer')
+        article.appendChild(postFooter)
 
-    // heart icon
-    let heartIcon = document.createElement('img')
-    heartIcon.classList.add('action-icon')
-    heartIcon.src = 'images/icon-heart.png'
-    postActions.appendChild(heartIcon)
+        // action buttons div
+        let postActions = document.createElement('div')
+        postActions.classList.add('post-actions')
+        postFooter.appendChild(postActions)
 
-    // comment icon
-    let commentIcon = document.createElement('img')
-    commentIcon.classList.add('action-icon')
-    commentIcon.src = 'images/icon-comment.png'
-    postActions.appendChild(commentIcon)
+        // heart icon
+        let heartIcon = document.createElement('img')
+        heartIcon.classList.add('action-icon')
+        heartIcon.src = 'images/icon-heart.png'
+        postActions.appendChild(heartIcon)
 
-    // share icon
-    let shareIcon = document.createElement('img')
-    shareIcon.classList.add('action-icon')
-    shareIcon.src = 'images/icon-dm.png'
-    postActions.appendChild(shareIcon)
+        // comment icon
+        let commentIcon = document.createElement('img')
+        commentIcon.classList.add('action-icon')
+        commentIcon.src = 'images/icon-comment.png'
+        postActions.appendChild(commentIcon)
 
-    // post likes
-    let postLikes = document.createElement('div')
-    postLikes.classList.add('post-likes')
-    postLikes.classList.add('emphasize')
-    postLikes.textContent = '21,492 likes'
-    postActions.appendChild(postLikes)
+        // share icon
+        let shareIcon = document.createElement('img')
+        shareIcon.classList.add('action-icon')
+        shareIcon.src = 'images/icon-dm.png'
+        postActions.appendChild(shareIcon)
 
-    // post text container div
-    let post = document.createElement('div')
-    post.classList.add('post')
-    postFooter.appendChild(post)
+        // post likes
+        let postLikes = document.createElement('div')
+        postLikes.classList.add('post-likes')
+        postLikes.classList.add('emphasize')
+        postLikes.textContent = `${posts[i].likes} likes`
+        postFooter.appendChild(postLikes)
 
-    // post text div
-    let postText = document.createElement('div')
-    postText.classList.add('post-text')
-    postFooter.appendChild(postText) 
+        // post text container div
+        let post = document.createElement('div')
+        post.classList.add('post')
+        postFooter.appendChild(post)
 
-    // poster span 
-    let postHandle = document.createElement('span')
-    postHandle.classList.add('post-handle')
-    postHandle.classList.add('emphasize')
-    postHandle.textContent = 'vincey1853'
-    postText.appendChild(postHandle)
+        // post text div
+        let postText = document.createElement('div')
+        postText.classList.add('post-text')
+        postFooter.appendChild(postText) 
 
-    // poster post
-    let posterPost = document.createTextNode('just took a few mushrooms lol')
-    postText.append(posterPost)
+        // poster span 
+        let postHandle = document.createElement('span')
+        postHandle.classList.add('post-handle')
+        postHandle.classList.add('emphasize')
+        postHandle.textContent = `${posts[i].username}`
+        postText.appendChild(postHandle)
+
+        // poster post
+        let posterPost = document.createTextNode(`${posts[i].comment}`)
+        postText.append(posterPost)
+
+    }
 
 }
 
-generatePost()
+generatePosts()
+
+let allPostImgs = document.querySelectorAll('post-img')
+
+document.addEventListener('dblclick', function() {
+
+    // console.log(event.target)
+
+    let element = event.target
+    
+    let parent = element.parentNode 
+
+    let parentArray = parent.children
+
+    let postFooter = parentArray[2]
+
+    console.log(postFooter)
+
+    let postText = postFooter.children[1]
+
+    let postLikesEntry = postText.textContent
+
+    console.log(postLikesEntry)
+
+    let likesNumber = parseInt(postLikesEntry)
+
+    likesNumber += 1
+
+    console.log(likesNumber)
+
+    postText.textContent = `${likesNumber} likes`
+
+})
+
+
